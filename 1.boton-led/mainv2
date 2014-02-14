@@ -1,0 +1,42 @@
+/*
+switch LED's Light up and down when a button is pressed using Arduino IDE
+
+Ports:
+	LED = 13
+	Button = 8
+*/
+
+//1.Port definitions:
+int buttonPin = 8;
+int ledPin = 13;
+boolean ledOn = false;
+boolean lastButton = LOW; 
+boolean currentButton = LOW;
+
+//2.Setup input/output beheave
+void setup(){
+	pinMode(buttonPin,INPUT);
+	pinMode(ledPin,OUTPUT);
+}
+
+//3.Functions
+//3.1 Function to give time to button avoiding bounce
+boolean debounce(boolean last){
+	boolean current = digitalRead(buttonPin);
+	if(last != current){
+		delay(5);
+		current = digitalRead(buttonPin);
+	}
+	return current;
+}
+
+//4.Define the execution loop
+void loop(){
+	curretnButton = debounce(lastButton);
+	if(lastButton == LOW && currentButton == HIGH){
+		ledOn != ledOn;
+	}else{
+		lastButton = currentButton;
+	}
+		digitalWrite(ledPin, ledOn);
+}

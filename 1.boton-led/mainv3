@@ -1,0 +1,43 @@
+/*
+Useing Arduino IDE, change one LED's brightness when a button is pushed using one of the PWD ports
+
+Ports:
+	LED = 11
+	Button = 8
+*/
+
+//1.Port definitions:
+int buttonPin = 8;
+int ledPin = 11;
+int ledLevel = 0;
+boolean lastButton = LOW; 
+boolean currentButton = LOW;
+
+//2.Setup input/output beheave
+void setup(){
+	pinMode(buttonPin,INPUT);
+	pinMode(ledPin,OUTPUT);
+}
+
+//3.Functions
+//3.1 Function to give time to button avoiding bounce
+boolean debounce(boolean last){
+	boolean current = digitalRead(buttonPin);
+	if(last != current){
+		delay(5);
+		current = digitalRead(buttonPin);
+	}
+	return current;
+}
+
+//4.Define the execution loop
+void loop(){
+	currentButton = debounce(lastButton);
+	if(lastButton == LOW && currentButton == HIGH){
+		ledLevel = ledLevel + 51; //51 is a random value
+	}else{
+		lastButton = currentButton;
+	}
+	if(ledLevel > 255) ledLevel = 0;
+	analogWrite(ledPin, ledLevel);  // be carefull....analog not digital 
+}

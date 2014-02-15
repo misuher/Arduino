@@ -1,1 +1,1 @@
-![alt tag](https://github.com/misuher/arduino/blob/master/1.boton-led/esquema_helloworld.jpg)
+![ScreenShot](https://raw.github.com/misuher/arduino/blob/master/1.boton-led/esquema_helloworld.jpg)

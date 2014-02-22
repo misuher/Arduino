@@ -8,29 +8,34 @@ FUNCIONES INCLUIDAS
 	sizeof(vble)
 
 //I/O Digital:
+
 	pinMode(pin,[INPUT, OUTPUT, INPUT_PULLUP])    	//INPUT_PULLUP=con resistencia interna
 	digitalWrite(pin, [HIGH, LOW])
 	digitalread(pin)  --> [HIGH, LOW]  				//Devuelve HIGH o LOW
 
 //I/O Analógico:
+
 	analogRead(pin) --> int  //0-1024
 	analogWrite(pin, valor)  //PWM--> valor va de 0-255
     	analogReference([DEFAULT, INTERNAL, EXTERNAL])
     	analogReference([DEFAULT, INTERNAL1V1, INTERNAL2V56, EXTERNAL])  //Para arduino MEGA
 
 //I/O avanzado:
+
 	tone(pin, freqhz_uint, [duracion_ms])  //genera una onda cuadrada de la freq especificada durante el tiempo establecido
 	noTone(pin)  // Para la generación de la onda cuadrada
 	shiftOut(pinDatos, pinReloj, [MSBFIRST, LSBFIRST], valor)
 	pulseIn(pin, [HIGH, LOW], [timeout_ms]) --> ulong  //devuelve la long del pulso en ms
 
 //Tiempo:
+
     delay(ms)
 	delayMicroseconds(us)
     millis() --> ulong  //devuelve el tiempo que lleva el programa en ejecución en ms, hace overflow en 50 dias
     micros() --> ulong  //devuelve el tiempo que lleva el programa en ejecución en us, hace overflow en 70 min
 
 //Matemáticas:
+
 	min(x, y)
 	max(x, y)
 	abs(x)
@@ -43,10 +48,12 @@ FUNCIONES INCLUIDAS
 	map(valor, fromLow, FromHigh, toLow, toHigh) --> int //remapea un valor de un rango de valores a otro, devuelve el valor remapeado
 
 //Random:
+
 	random([min], max) --> long  //min,max=rango de valores entre los que puede estar el num aleatorio
     randomSeed(semilla) //la semilla es un número long o int
 
 //Bits y bytes:
+
 	lowByte(x) --> byte 		//devuelve el byte mas a la derecha 
 	highByte(x) --> byte 		//devuelve el byte mas a la izquierda
 	bitRead(x, bitn) --> 0,1  	//devuelve el bit en la posición n, n=0 es el de mas a la izq
@@ -56,16 +63,18 @@ FUNCIONES INCLUIDAS
 	bit(bitn) --> int  		// bitn--> n=0->1, n=1->2, n=2->4, n=3->8...
 
 //interrupciones Externas:
+
 	attachInterrupt(interrupcion, funcion, [LOW, CHANGE, RISING, FALLING])
-        //interrupcon = un int que identifica el num de interrupcion
-        //funcion = nombre de la funcion manejadora de la interrupcion
-        //LOW = cuando el pin esta en LOW
-        //CHANGE = cuando el pin cambia de valor
-        //RISING = cambio de low a high
-        //FALLING = cambio de high a low
-    detachInterrupt(interrupcion)
+        	//interrupcon = un int que identifica el num de interrupcion
+        	//funcion = nombre de la funcion manejadora de la interrupcion
+        	//LOW = cuando el pin esta en LOW
+        	//CHANGE = cuando el pin cambia de valor
+        	//RISING = cambio de low a high
+        	//FALLING = cambio de high a low
+    	detachInterrupt(interrupcion)
 
 //interrupciones:
+
     interrupts()  //activa las interrupciones
     noInterrupts()  //desactiva todas las interrupciones
 

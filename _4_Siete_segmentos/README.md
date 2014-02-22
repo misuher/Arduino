@@ -1,1 +1,1 @@
-![Alt text](https://raw.github.com/misuher/arduino/master/2.Dimm-led/esquema.jpg?raw=true)
+![Alt text](https://raw.github.com/misuher/arduino/master/_4_Siete_segmentos/esquema.jpg?raw=true)

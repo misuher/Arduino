@@ -1,0 +1,2 @@
+Los servomoteores, a diferencia de los motores de continua, esperan recibir una señal PWM
+Dependiendo de este valor el servo rota a una posición determinada, los más comunes suelen girar en 0 y 180 grados

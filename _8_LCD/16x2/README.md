@@ -17,3 +17,4 @@ Liquid Cristal Display, la configuración típica de patillas es la siguiente:
 	--Vcc (voltaje de la lógica)
 	--GND (voltaje de la lógica)
 
+de los 8 bits de datos nos bastan 4 para escribir datos, de D7 a D4
